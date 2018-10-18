@@ -6,8 +6,8 @@ RUN npm i -g live-server
 # Set default workdir
 WORKDIR /var/www
 
-# Expose port
-EXPOSE 8080 
+# Default port
+ENV PORT "8080"
 
 # Start live server
-CMD ["live-server", "--no-browser"]
+ENTRYPOINT live-server --no-browser --port=$PORT
